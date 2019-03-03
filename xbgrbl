@@ -1,0 +1,26 @@
+#!/bin/bash
+
+cleanup() {
+    killall -q socat
+    sudo rm -f /dev/ttyS666 /dev/grblpipe
+    echo "exiting"
+}
+
+onerror() {
+    echo "error occured: line $(caller)"
+    cleanup
+    exit 1
+}
+
+trap onerror ERR
+trap cleanup EXIT
+
+sudo mknod -m 666 /dev/ttyS666 c 4 64
+sudo socat -d -d pty,link=/dev/grblpipe,raw,echo=0 pty,link=/dev/ttyS666,raw,echo=0 > socat.log 2>&1 &
+sudo chmod a+rw /dev/ttyS666
+sudo chmod a+rw /dev/grblpipe
+sleep 1
+./bin/xbgrbl.js $@
+
+
+

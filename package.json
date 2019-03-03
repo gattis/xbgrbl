@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/gattis/xbgrbl.git",
   "dependencies": {
+    "commander": "^2.19.0",
     "node-hid": "^0.7.6",
     "serialport": "^7.1.4"
   },
