@@ -1,0 +1,34 @@
+{
+  "name": "xbgrbl",
+  "version": "1.0.0",
+  "description": "Use Xbox One Controller to Control GRBL CNC Controller",
+  "license": "MIT",
+  "main": "./index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "bin": {
+    "xbgrbl": "./bin/xbgrbl"
+  },
+  "preferGlobal": false,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gattis/xbgrbl.git"
+  },
+  "keywords": [
+    "xbox",
+    "grbl",
+    "cnc"
+  ],
+  "author": "Matt Gattis <gattis@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/gattis/xbgrbl.git"
+  },
+  "homepage": "https://github.com/gattis/xbgrbl.git",
+  "dependencies": {
+    "node-hid": "^0.7.6",
+    "serialport": "^7.1.4"
+  },
+  "devDependencies": {}
+}
